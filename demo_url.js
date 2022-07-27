@@ -21,7 +21,7 @@ console.log(q)
 /*The parse method returns an object containing url properties*/
 console.log(q.host);
 console.log(q.pathname);
-console.log(q.search);
+console.log(q.search !== ''); //true
 
 /*The query property returns an object with all the querystring parameters as properties:*/
 var qdata = q.query;

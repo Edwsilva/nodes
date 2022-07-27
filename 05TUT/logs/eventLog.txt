@@ -1,0 +1,7 @@
+25/07/2022	11:04:22 AM	eda1650f-29c0-44db-a2a2-b8de6f83dbcd	Log event Emitted!
+25/07/2022	11:10:44 AM	b28db47a-3a8a-4ba9-93ee-c4962b15f196	Log event Emitted!
+25/07/2022	11:12:28 AM	b7b58c15-aae1-4e4e-91bb-2652185778fe	Log event Emitted!!!
+25/07/2022	11:12:58 AM	bdb1ccbe-3981-4218-a856-74cbf2268db5	Log event Emitted!!!
+25/07/2022	11:15:38 AM	426885c7-9472-43ab-b964-edee1d0a7060	Log event Emitted!!!	teste
+25/07/2022	11:15:56 AM	0ec70c86-4bae-4cc1-8310-e9c44c5281bc	Log event Emitted!!!	teste
+25/07/2022	11:16:14 AM	82712997-ce73-4e79-a606-7a6ca8388bbd	Log event Emitted!!!	teste
