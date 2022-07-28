@@ -1,13 +1,16 @@
-const express=require('express')
-const routes=require('./rotas/rotas')
-const porta = process.env.PORT || 3000
+import express from "express";
+import router from "./rotas/rotas.js";
+const porta = process.env.PORT || 3000;
 
-const app=express()
+const app = express();
 
-app.use('/', rotas)
+app.use("/", router);
 
-app.get('*', (req,res) => {
-  res.send('CFB Cursos')
-})
+// When no route is found,
+app.get("*", (req, res) => {
+  res.send("CFB Cursos");
+});
 
-app.listen(porta, () => {console.log('Rodando')})
+app.listen(porta, () => {
+  console.log("Rodando");
+});

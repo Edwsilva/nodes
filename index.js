@@ -1,16 +1,16 @@
-const logEvents = require('./logEvents');
+const logEvents = require("./logEvents");
 
-const EventEmitter = require('events') ;
+const EventEmitter = require("events");
 
-class MyEmitter extends EventEmitter { };
+class MyEmitter extends EventEmitter {}
 
 // initialize object
 const myEmitter = new MyEmitter();
 
 // add listener for the log event
-myEmitter.on('log', (msg, other) => logEvents(msg, other));
+myEmitter.on("log", (msg, other) => logEvents(msg, other));
 
 setTimeout(() => {
   // trigger/emmiter the event
-  myEmitter.emit('log', 'Log event Emitted!!!', 'teste');
-}, 2000)
+  myEmitter.emit("log", "msg Log event Emitted!!!", "other msg", "teste1");
+}, 2000);

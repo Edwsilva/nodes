@@ -1,27 +1,36 @@
-const express=require('express')
-const routes=express.Router()
+//import express from "express";
+//const express = require("express");
+import { Router } from "express";
+
+const router = Router();
+//const router = express.Router();
 
 let courseInfo = [
-  {'curso': 'node', 'info': 'Curso de Node'},
-  {'curso': 'react', 'info': 'Curso de React'},
-  {'curso': 'java', 'info': 'Curso de Java'},
-  {'curso': 'arduino', 'info': 'Curso de Arduino'},
-]
+  { curso: "node", info: "Curso de Node" },
+  { curso: "react", info: "Curso de React" },
+  { curso: "java", info: "Curso de Java" },
+  { curso: "arduino", info: "Curso de Arduino" },
+];
 
-routes.get('/', (req, res) => {
- res.json({ola: 'Seja bem vindo'})
-})
+router.get("/", (req, res) => {
+  res.json({ ola: "Seja bem vindo" });
+});
 
-routes.get('/:cursoid', (req, res) => {
-  const course=req.params.courseid
-  let courseInformation=courseInfo.find(item => item.curso == curso)
-  if(!courseInformation) {
-    res.status(404).json(
-      {err: 'Curso não encontrato', cursoPesquisado: course}
-    )
+// router.get("/:all", (req, res) => {
+//   res.status(200).json(courseInfo);
+// });
+
+router.get("/:courseid", (req, res) => {
+  const course = req.params.courseid;
+  console.log(course);
+  let courseInformation = courseInfo.find((item) => item.curso == course);
+  if (!courseInformation) {
+    res
+      .status(404)
+      .json({ erro: "Curso não encontrato", cursoPesquisado: course });
   } else {
-    res.status(200).json(courseInformation)
+    res.status(200).json(courseInformation);
   }
-})
+});
 
-module.exports = routes
+export default router;
