@@ -14,8 +14,13 @@ app.get('/new-page(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'new-page.html'));
 });
 
-app.get('/old-page(.html)?', (req, res) => {
-    res.redirect(301, '/new-page.html'); //302 by default
+app.get('/old-page(.html)?', (req, res, next) => {
+   // res.redirect(301, '/new-page.html'); //302 by default
+   console.log('attempted to load /old-page(.html)? redirect new-page.html');
+    next()
+}, (req, res) => {
+    res.redirect(301, '/new-page.html'); 
+    //res.send('teste')
 });
 
 // Route handlers
@@ -23,7 +28,7 @@ app.get('/hello(.html)?', (req, res, next) => {
     console.log('attempted to load hello.html');
     next()
 }, (req, res) => {
-    res.send('Hello World!');
+    res.send('Page Hello World not exist!');
 });
 
 
