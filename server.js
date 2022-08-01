@@ -32,7 +32,7 @@ app.get('/hello(.html)?', (req, res, next) => {
 });
 
 
-// chaining route handlers
+// chaining route handlers with next
 const one = (req, res, next) => {
     console.log('one');
     next();
@@ -50,6 +50,7 @@ const three = (req, res) => {
 
 app.get('/chain(.html)?', [one, two, three]);
 
+//otherwise
 app.get('/*', (req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
 })
